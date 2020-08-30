@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int linearSearch(){
+
+    char pattern[3];
+    char arr[6][3]={"abc","abd","add","lmn","opr","xyz"};
+    printf("Given String Array is: arr={\"abc\",\"abd\",\"add\",\"lmn\",\"opr\",\"xyz\"}\n");
+    printf("Enter char array you wish to search:\n");
+    scanf("%[^\n]",pattern);
+    printf("You have entered : ");
+    for (int i = 0; i < 3; i++){
+        printf("%c",pattern[i]);
+    }
+    for (int i = 0; i < 6; i++){
+        //pattern=xyk
+        if(arr[i][0]==pattern[0]){
+            if(arr[i][1]==pattern[1]){
+                if(arr[i][2]==pattern[2]){
+                        return i+1;
+                }
+            }
+        }
+    }
+  return 0;    
+}
+
+void main(){
+    int loc;
+    loc = linearSearch();
+    if (loc!=0){
+        printf("\nThe Location of the string was found to be: %d",loc);
+    }
+    else{
+        printf("\nString not found!");
+    }    
+}
